@@ -1,0 +1,932 @@
+/* ============================================================
+   🌙🌸 IRASALIS — SAKURA MOONLIGHT
+   Vencord Theme
+   Dark Glass • Celeste • Lila • Sakura
+   ============================================================ */
+
+
+/* ============================================================
+   🎨 VARIABLES + WALLPAPER
+   ============================================================ */
+
+:root {
+
+    /* WALLPAPER */
+    --irasalis-wallpaper:
+        url("https://i.ibb.co/ZpzSTPhJ/Imagen-de-Chat-GPT-29-sept-2026-10-46-11-p-m.png");
+
+    /* COLORES */
+    --ira-night: #080a1c;
+    --ira-dark: #10132b;
+
+    --ira-cyan: #9de7ff;
+    --ira-cyan-bright: #c9f4ff;
+
+    --ira-lilac: #cbbcff;
+    --ira-purple: #a996ff;
+
+    --ira-pink: #f2bad8;
+
+    --ira-white: #eef5ff;
+    --ira-soft-white: #dce5ff;
+
+    --ira-muted: #929bbf;
+
+    --ira-border: rgba(157, 231, 255, .14);
+    --ira-glow: rgba(157, 231, 255, .20);
+
+
+    /* ========================================================
+       🎨 VARIABLES INTERNAS DE DISCORD
+       ======================================================== */
+
+    --background-primary: rgba(8, 11, 30, .46) !important;
+
+    --background-secondary:
+        rgba(10, 13, 34, .62) !important;
+
+    --background-secondary-alt:
+        rgba(13, 16, 40, .68) !important;
+
+    --background-tertiary:
+        rgba(6, 8, 24, .72) !important;
+
+    --background-floating:
+        rgba(10, 12, 34, .92) !important;
+
+
+    --background-base-lowest:
+        rgba(5, 7, 22, .68) !important;
+
+    --background-base-lower:
+        rgba(7, 10, 28, .62) !important;
+
+    --background-base-low:
+        rgba(10, 13, 34, .56) !important;
+
+    --background-base-tertiary:
+        rgba(12, 15, 38, .54) !important;
+
+    --background-base-secondary:
+        rgba(14, 17, 42, .52) !important;
+
+    --background-base-primary:
+        rgba(10, 13, 34, .46) !important;
+
+
+    /* TEXTO */
+
+    --text-normal: #edf5ff !important;
+    --text-primary: #edf5ff !important;
+
+    --text-secondary:
+        #c7cdec !important;
+
+    --text-muted:
+        #9299be !important;
+
+    --text-tertiary:
+        #818aac !important;
+
+    --header-primary:
+        #f5f8ff !important;
+
+    --header-secondary:
+        #cbd3f1 !important;
+
+
+    /* ICONOS */
+
+    --interactive-normal:
+        #bec9eb !important;
+
+    --interactive-hover:
+        #d6f5ff !important;
+
+    --interactive-active:
+        #9de7ff !important;
+
+    --interactive-muted:
+        #687195 !important;
+
+
+    /* LINKS */
+
+    --text-link:
+        #9de7ff !important;
+
+    --text-link-low-saturation:
+        #b8ecff !important;
+
+
+    /* INPUT */
+
+    --input-background:
+        rgba(11, 15, 39, .76) !important;
+
+
+    /* DISCORD BRAND → LILA */
+
+    --brand-experiment:
+        #a996ff !important;
+
+    --brand-500:
+        #a996ff !important;
+
+    --brand-560:
+        #9280ed !important;
+}
+
+
+/* ============================================================
+   🌙 WALLPAPER
+   ============================================================ */
+
+html,
+body {
+    background: #07091b !important;
+}
+
+
+/*
+   Ponemos el wallpaper directamente
+   detrás de Discord.
+*/
+
+#app-mount {
+    background:
+        linear-gradient(
+            rgba(4, 6, 20, .18),
+            rgba(4, 6, 20, .24)
+        ),
+        var(--irasalis-wallpaper)
+        center center / cover
+        no-repeat
+        fixed !important;
+}
+
+
+/* ============================================================
+   🪟 QUITAR CAPAS OPACAS DE DISCORD
+   ============================================================ */
+
+[class*="app"],
+[class*="bg"],
+[class*="layer"],
+[class*="base"] {
+    background-color:
+        transparent !important;
+}
+
+
+/* ============================================================
+   🏠 ÁREA PRINCIPAL
+   ============================================================ */
+
+[class*="content"],
+[class*="page"] {
+    background-color:
+        transparent !important;
+}
+
+
+/* ============================================================
+   🏰 BARRA DE SERVIDORES
+   ============================================================ */
+
+[class*="guilds"] {
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(4, 7, 24, .73),
+            rgba(11, 9, 31, .68)
+        ) !important;
+
+    backdrop-filter:
+        blur(16px)
+        saturate(125%) !important;
+
+    -webkit-backdrop-filter:
+        blur(16px)
+        saturate(125%) !important;
+
+    border-right:
+        1px solid
+        rgba(157, 231, 255, .07);
+}
+
+
+/* ============================================================
+   🌸 PANEL DE CANALES
+   ============================================================ */
+
+[class*="sidebar"] {
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(8, 11, 31, .69),
+            rgba(17, 13, 40, .65)
+        ) !important;
+
+    backdrop-filter:
+        blur(18px)
+        saturate(120%) !important;
+
+    -webkit-backdrop-filter:
+        blur(18px)
+        saturate(120%) !important;
+
+    border-right:
+        1px solid
+        rgba(157, 231, 255, .10);
+}
+
+
+/* ============================================================
+   🌸 CANALES
+   ============================================================ */
+
+[class*="link"] {
+
+    border-radius:
+        9px !important;
+
+    transition:
+        background .20s ease,
+        box-shadow .20s ease,
+        transform .20s ease !important;
+}
+
+
+/* HOVER */
+
+[class*="link"]:hover {
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(157, 231, 255, .10),
+            rgba(203, 188, 255, .07)
+        ) !important;
+
+    transform:
+        translateX(2px);
+}
+
+
+/* CANAL SELECCIONADO */
+
+[class*="modeSelected"]
+[class*="link"] {
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(157, 231, 255, .22),
+            rgba(169, 150, 255, .13)
+        ) !important;
+
+    box-shadow:
+
+        inset 3px 0
+        #9de7ff,
+
+        0 0 16px
+        rgba(157, 231, 255, .10)
+
+        !important;
+}
+
+
+/* NOMBRE DEL CANAL */
+
+[class*="modeSelected"]
+[class*="name"] {
+
+    color:
+        #b9efff !important;
+
+    text-shadow:
+        0 0 8px
+        rgba(157, 231, 255, .28);
+}
+
+
+/* CATEGORÍAS */
+
+[class*="containerDefault"]
+[class*="name"] {
+
+    color:
+        #abb7db !important;
+}
+
+
+/* ============================================================
+   🌙 CHAT
+   ============================================================ */
+
+[class*="chat"] {
+
+    background:
+        rgba(5, 8, 25, .25) !important;
+
+    backdrop-filter:
+        blur(3px) !important;
+}
+
+
+[class*="chatContent"] {
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(5, 8, 26, .20),
+            rgba(7, 9, 28, .28)
+        ) !important;
+
+    backdrop-filter:
+        blur(3px) !important;
+}
+
+
+/*
+   El chat central es el más transparente
+   para que se vea Irasalis.
+*/
+
+
+/* ============================================================
+   🌙 BARRA SUPERIOR
+   ============================================================ */
+
+[class*="title"] {
+
+    background:
+        rgba(7, 10, 29, .55) !important;
+
+    backdrop-filter:
+        blur(16px) !important;
+
+    -webkit-backdrop-filter:
+        blur(16px) !important;
+
+    border-bottom:
+        1px solid
+        rgba(157, 231, 255, .08);
+}
+
+
+/* ============================================================
+   👥 PANEL DE MIEMBROS
+   ============================================================ */
+
+[class*="membersWrap"],
+[class*="members"] {
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(8, 11, 31, .62),
+            rgba(17, 13, 40, .61)
+        ) !important;
+
+    backdrop-filter:
+        blur(17px) !important;
+
+    -webkit-backdrop-filter:
+        blur(17px) !important;
+}
+
+
+/* ============================================================
+   💬 MENSAJES
+   ============================================================ */
+
+[class*="message"] {
+
+    border-radius:
+        9px !important;
+
+    transition:
+        background .18s ease,
+        box-shadow .18s ease !important;
+}
+
+
+/* HOVER MENSAJE */
+
+[class*="message"]:hover {
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(157, 231, 255, .055),
+            rgba(203, 188, 255, .035)
+        ) !important;
+}
+
+
+/* TEXTO */
+
+[class*="messageContent"] {
+
+    color:
+        #eaf2ff !important;
+}
+
+
+/* USUARIO */
+
+[class*="username"] {
+
+    text-shadow:
+        0 0 8px
+        rgba(157, 231, 255, .10);
+}
+
+
+/* FECHA */
+
+[class*="timestamp"] {
+
+    color:
+        #818aac !important;
+}
+
+
+/* ============================================================
+   🌸 MENCIONES
+   ============================================================ */
+
+[class*="mentioned"] {
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(242, 186, 216, .16),
+            rgba(169, 150, 255, .09)
+        ) !important;
+
+    border-radius:
+        8px !important;
+}
+
+
+[class*="mentioned"]::before {
+
+    background:
+        linear-gradient(
+            #f2bad8,
+            #a996ff
+        ) !important;
+
+    width:
+        3px !important;
+
+    box-shadow:
+        0 0 10px
+        rgba(242, 186, 216, .45);
+}
+
+
+/* ============================================================
+   ✍️ CAJA PARA ESCRIBIR
+   ============================================================ */
+
+[class*="channelTextArea"] {
+
+    background:
+        transparent !important;
+}
+
+
+[class*="scrollableContainer"] {
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(12, 17, 45, .88),
+            rgba(29, 21, 59, .84)
+        ) !important;
+
+    border:
+        1px solid
+        rgba(157, 231, 255, .19) !important;
+
+    border-radius:
+        16px !important;
+
+    backdrop-filter:
+        blur(20px) !important;
+
+    -webkit-backdrop-filter:
+        blur(20px) !important;
+
+    box-shadow:
+
+        0 8px 30px
+        rgba(0, 0, 0, .25),
+
+        inset 0 0 25px
+        rgba(157, 231, 255, .025)
+
+        !important;
+}
+
+
+/* CUANDO ESTÁS ESCRIBIENDO */
+
+[class*="channelTextArea"]:focus-within
+[class*="scrollableContainer"] {
+
+    border-color:
+        rgba(157, 231, 255, .50)
+        !important;
+
+    box-shadow:
+
+        0 0 15px
+        rgba(157, 231, 255, .14),
+
+        0 0 28px
+        rgba(169, 150, 255, .09)
+
+        !important;
+}
+
+
+/* TEXTO QUE ESCRIBES */
+
+[class*="slateTextArea"] {
+
+    color:
+        #f0f7ff !important;
+
+    caret-color:
+        #9de7ff !important;
+}
+
+
+/* "Enviar mensaje a..." */
+
+[class*="placeholder"] {
+
+    color:
+        #909bc5 !important;
+}
+
+
+/* ============================================================
+   🩵 ICONOS DE LA CAJA DE MENSAJE
+   ============================================================ */
+
+[class*="buttons"] button,
+[class*="attachButton"] {
+
+    color:
+        #b6c5eb !important;
+
+    transition:
+        color .18s ease,
+        filter .18s ease,
+        transform .18s ease !important;
+}
+
+
+[class*="buttons"] button:hover,
+[class*="attachButton"]:hover {
+
+    color:
+        #9de7ff !important;
+
+    filter:
+        drop-shadow(
+            0 0 5px
+            rgba(157, 231, 255, .55)
+        );
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* ============================================================
+   👤 PANEL DE USUARIO
+   ============================================================ */
+
+[class*="panels"] {
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(7, 10, 29, .88),
+            rgba(24, 18, 49, .87)
+        ) !important;
+
+    backdrop-filter:
+        blur(20px) !important;
+
+    -webkit-backdrop-filter:
+        blur(20px) !important;
+
+    border-top:
+        1px solid
+        rgba(157, 231, 255, .12) !important;
+}
+
+
+/* ============================================================
+   🔍 BUSCADOR
+   ============================================================ */
+
+[class*="searchBar"] {
+
+    background:
+        rgba(14, 18, 44, .78) !important;
+
+    border:
+        1px solid
+        rgba(157, 231, 255, .11);
+
+    border-radius:
+        10px !important;
+}
+
+
+/* ============================================================
+   🎀 MENÚS Y POPUPS
+   ============================================================ */
+
+[class*="menu"] {
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(10, 13, 36, .95),
+            rgba(28, 21, 55, .94)
+        ) !important;
+
+    backdrop-filter:
+        blur(24px) !important;
+
+    -webkit-backdrop-filter:
+        blur(24px) !important;
+
+    border:
+        1px solid
+        rgba(157, 231, 255, .14) !important;
+
+    border-radius:
+        14px !important;
+
+    box-shadow:
+
+        0 15px 45px
+        rgba(0, 0, 0, .40),
+
+        0 0 25px
+        rgba(157, 231, 255, .06)
+
+        !important;
+}
+
+
+[class*="popout"] {
+
+    background-color:
+        rgba(10, 13, 36, .90) !important;
+
+    backdrop-filter:
+        blur(22px) !important;
+
+    -webkit-backdrop-filter:
+        blur(22px) !important;
+}
+
+
+/* ============================================================
+   🎀 BOTONES
+   ============================================================ */
+
+button {
+
+    transition:
+        transform .18s ease,
+        filter .18s ease !important;
+}
+
+
+button:hover {
+
+    filter:
+        brightness(1.10);
+
+}
+
+
+/* ============================================================
+   🩵 LINKS
+   ============================================================ */
+
+a {
+
+    color:
+        #9de7ff !important;
+}
+
+
+a:hover {
+
+    color:
+        #cbbcff !important;
+
+    text-shadow:
+        0 0 8px
+        rgba(157, 231, 255, .25);
+}
+
+
+/* ============================================================
+   🌙 SCROLLBAR
+   ============================================================ */
+
+::-webkit-scrollbar {
+
+    width:
+        6px !important;
+}
+
+
+::-webkit-scrollbar-track {
+
+    background:
+        transparent !important;
+}
+
+
+::-webkit-scrollbar-thumb {
+
+    background:
+        linear-gradient(
+            180deg,
+            #8edfff,
+            #aa9aff
+        ) !important;
+
+    border-radius:
+        20px !important;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+
+    background:
+        linear-gradient(
+            180deg,
+            #b6efff,
+            #cbbcff
+        ) !important;
+
+    box-shadow:
+        0 0 8px
+        rgba(157, 231, 255, .30);
+}
+
+
+/* ============================================================
+   ✨ SELECCIÓN DE TEXTO
+   ============================================================ */
+
+::selection {
+
+    background:
+        rgba(157, 231, 255, .30) !important;
+
+    color:
+        white !important;
+}
+
+
+/* ============================================================
+   🌸 LUZ AMBIENTAL
+   ============================================================ */
+
+#app-mount::before {
+
+    content: "";
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    pointer-events:
+        none;
+
+    background:
+
+        radial-gradient(
+            circle at 75% 15%,
+            rgba(157, 231, 255, .055),
+            transparent 27%
+        ),
+
+        radial-gradient(
+            circle at 15% 85%,
+            rgba(203, 188, 255, .045),
+            transparent 30%
+        );
+
+    z-index:
+        0;
+}
+/* ============================================================
+   🌙 IRASALIS — WALLPAPER NÍTIDO
+   Quita el blur sin perder transparencia
+   ============================================================ */
+
+/* CHAT CENTRAL — wallpaper totalmente nítido */
+[class*="chat"],
+[class*="chatContent"] {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+
+    background: rgba(5, 8, 25, 0.18) !important;
+}
+
+
+/* PANEL DE CANALES */
+[class*="sidebar"] {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(8, 11, 31, 0.66),
+            rgba(17, 13, 40, 0.63)
+        ) !important;
+}
+
+
+/* SERVIDORES */
+[class*="guilds"] {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+
+    background: rgba(5, 7, 23, 0.66) !important;
+}
+
+
+/* MIEMBROS */
+[class*="members"],
+[class*="membersWrap"] {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+
+    background: rgba(9, 11, 32, 0.60) !important;
+}
+
+
+/* BARRA SUPERIOR */
+[class*="title"] {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+
+    background: rgba(8, 10, 29, 0.55) !important;
+}
+
+
+/* PANEL DE USUARIO */
+[class*="panels"] {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(7, 10, 29, 0.84),
+            rgba(24, 18, 49, 0.83)
+        ) !important;
+}
+
+
+/* CAJA DE ESCRIBIR
+   Aquí dejamos SOLO un blur pequeñito porque queda bonito */
+[class*="scrollableContainer"] {
+    backdrop-filter: blur(3px) !important;
+    -webkit-backdrop-filter: blur(3px) !important;
+}
+
+
+/* POPUPS
+   Estos sí pueden tener glassmorphism */
+[class*="menu"],
+[class*="popout"] {
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+}
